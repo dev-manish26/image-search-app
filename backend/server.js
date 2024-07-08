@@ -14,6 +14,10 @@ const unsplash = createApi({
 
 app.use(cors());
 
+app.get('/', (req,res)=>{
+  res.send('server is running');
+})
+
 app.get('/api/photos', (req, res) => {
   const query = req.query.query ;
   unsplash.search.getPhotos({ query, page: 1, perPage: 10 })
